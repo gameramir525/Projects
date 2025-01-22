@@ -1,3 +1,4 @@
+import { debug, game, TILESIZE } from "./Main.js";
 export const UP = "UP";
 export const DOWN = "DOWN";
 export const LEFT = "LEFT";
@@ -28,6 +29,15 @@ export class Input {
                 this.keyReleased(LEFT);
             } else if (e.code === 'KeyD') {
                 this.keyReleased(RIGHT);
+            }
+        })
+
+        window.addEventListener('keydown', e => {
+            if (e.code === 'KeyE' && game.world.getTile(game.world.level1.CollisionLayer, game.player.position.y / TILESIZE, game.player.position.x / TILESIZE) === 2) {
+                game.world.setTile(game.world.level1.CollisionLayer, game.player.position.y / TILESIZE, game.player.position.x / TILESIZE, 0);
+            }
+            if (e.code === "Numpad0") {
+                debug.status = !debug.status;
             }
         })
 

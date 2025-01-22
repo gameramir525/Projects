@@ -10,7 +10,7 @@ export const ROWS = 20;
 
 export const gameWidth = TILESIZE * COLS;
 export const gameHeight = TILESIZE * ROWS;
-
+export var debug = {status:false};
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 canvas.width = gameWidth;
@@ -40,17 +40,6 @@ function animate() {
 
 }
 requestAnimationFrame(animate);
-
-take();
-function take() {
-    window.addEventListener('keydown', e => {
-        if (e.code === 'KeyE' && game.world.getTile(game.world.level1.CollisionLayer, game.player.position.y / TILESIZE, game.player.position.x / TILESIZE) === 2) {
-            game.world.setTile(game.world.level1.CollisionLayer, game.player.position.y / TILESIZE, game.player.position.x / TILESIZE, 0);
-        }
-    })
-}
-
-
 
 const saveButton = document.getElementById('save');
 const loadButton = document.getElementById('load');

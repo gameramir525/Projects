@@ -1,4 +1,4 @@
-import { TILESIZE, ROWS, COLS, game } from "./Main.js";
+import { TILESIZE, ROWS, COLS, game, debug } from "./Main.js";
 
 export class World {
     constructor() {
@@ -71,30 +71,32 @@ export class World {
                     TILESIZE,
                     TILESIZE
                 )
-                if (this.getTile(this.level1.CollisionLayer, row, col) === 1) {
-                    ctx.fillStyle = "brown";
-                    ctx.fillRect(
+                if (debug.status) {
+                    if (this.getTile(this.level1.CollisionLayer, row, col) === 1) {
+                        ctx.fillStyle = "brown";
+                        ctx.fillRect(
+                            col * TILESIZE,
+                            row * TILESIZE,
+                            TILESIZE,
+                            TILESIZE
+                        )
+                    }
+                    if (this.getTile(this.level1.CollisionLayer, row, col) === 2) {
+                        ctx.fillStyle = "orange";
+                        ctx.fillRect(
+                            col * TILESIZE,
+                            row * TILESIZE,
+                            TILESIZE,
+                            TILESIZE
+                        )
+                    }
+                    ctx.strokeRect(
                         col * TILESIZE,
                         row * TILESIZE,
                         TILESIZE,
                         TILESIZE
                     )
                 }
-                if (this.getTile(this.level1.CollisionLayer, row, col) === 2) {
-                    ctx.fillStyle = "orange";
-                    ctx.fillRect(
-                        col * TILESIZE,
-                        row * TILESIZE,
-                        TILESIZE,
-                        TILESIZE
-                    )
-                }
-                ctx.strokeRect(
-                    col * TILESIZE,
-                    row * TILESIZE,
-                    TILESIZE,
-                    TILESIZE
-                )
             }
         }
     }
