@@ -50,12 +50,15 @@ export class World {
             ],
         }
     }
+
     getTile(array, row, col) {
         return array[COLS * row + col];
     }
+
     setTile(array, row, col, newTile) {
         array[COLS * row + col] = newTile;
     }
+    
     drawMap(ctx) {
         for (let row = 0; row < ROWS; row++) {
             for (let col = 0; col < COLS; col++) {

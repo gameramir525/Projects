@@ -1,6 +1,6 @@
 import { TILESIZE } from "./Main.js";
 
-export default class GameObject {
+export class GameObject {
     constructor({ game, sprite, position, scale }) {
         this.game = game;
         this.sprite = sprite ?? { x: 0, y: 0, width: TILESIZE, heirht: TILESIZE, image: "" };
@@ -23,6 +23,7 @@ export default class GameObject {
         } else {
             const stepX = this.distanceToTravel.x / distance;
             const stepY = this.distanceToTravel.y / distance;
+
             this.position.x += stepX * speed;
             this.position.y += stepY * speed;
 

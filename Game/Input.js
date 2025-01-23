@@ -18,7 +18,7 @@ export class Input {
             } else if (e.code === 'KeyD') {
                 this.keyPressed(RIGHT);
             }
-        });
+        })
 
         window.addEventListener('keyup', e => {
             if (e.code === 'KeyW') {

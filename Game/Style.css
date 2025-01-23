@@ -1,26 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
 #pole {
     position: absolute;
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: rgb(6, 136, 64);
     width: 75%;
     height: 100%;
     right: 0%;
     top: 0%;
-}
-
-#menu {
-    position: absolute;
-    border: 1px solid black;
-    background-color: rgb(10, 93, 148);
-    width: 25%;
-    height: 100%;
-    left: 0%;
-    top: 0%;
+    bottom: 0%;
 }
 
 #game {
     position: absolute;
-    border: 2px solid black;
+    border: 1px solid black;
     top: 50%;
     left: 50%;
     translate: -50%-50%;
@@ -28,9 +24,22 @@
     image-rendering: pixelated;
 }
 
-body {
-    display: flex;
-    justify-content: center;
+#menu {
+    position: absolute;
+    border: 2px solid black;
+    background-color: rgb(10, 93, 148);
+    width: 25%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    bottom: 0%;
+}
+
+#interface {
+    border: 1px solid black;
+    background-color: rgb(13, 73, 112);
+    width: 100%;
+    height: 50%;
 }
 
 .assets {
